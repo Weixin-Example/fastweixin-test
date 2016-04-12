@@ -1,26 +1,26 @@
-package com.weixin.fastweixin.message;
+package com.weixin.fastweixin.company.message.resp;
 
 import java.io.Serializable;
 
 import com.weixin.fastweixin.message.util.MessageBuilder;
 
 /**
- * 
+ * 微信企业号被动响应消息基类
  * 
  * @author 	Lian
- * @date	2016年4月11日
+ * @date	2016年4月12日
  * @since	1.0	
  */
-public class BaseMsg implements Serializable {
+public class QYBaseRespMsg implements Serializable {
 
-	private static final long serialVersionUID = 3986681941851684519L;
+	private static final long serialVersionUID = 1L;
 
 	private String toUserName;
 	private String fromUserName;
-	private long createTime;
+	private int createTime;
 	private String msgType;
 
-	public BaseMsg() {
+	public QYBaseRespMsg() {
 	}
 
 	public String getToUserName() {
@@ -39,11 +39,11 @@ public class BaseMsg implements Serializable {
 		this.fromUserName = fromUserName;
 	}
 
-	public long getCreateTime() {
+	public int getCreateTime() {
 		return createTime;
 	}
 
-	public void setCreateTime(long createTime) {
+	public void setCreateTime(int createTime) {
 		this.createTime = createTime;
 	}
 
@@ -60,7 +60,7 @@ public class BaseMsg implements Serializable {
 		MessageBuilder builder = new MessageBuilder(159);
 		builder.addData("ToUserName", getToUserName());
 		builder.addData("FromUserName", getFromUserName());
-		builder.addTag("CreateTime", String.valueOf(System.currentTimeMillis()).substring(0, 10));
+		builder.addData("CreateTime", String.valueOf(System.currentTimeMillis() / 1000));
 		return builder.toString();
 	}
 

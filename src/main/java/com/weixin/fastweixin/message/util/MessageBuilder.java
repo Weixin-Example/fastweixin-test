@@ -1,4 +1,4 @@
-package com.weixin.fastweixin.util;
+package com.weixin.fastweixin.message.util;
 
 /**
  * 
