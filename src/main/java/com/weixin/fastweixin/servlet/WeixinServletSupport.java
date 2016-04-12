@@ -21,6 +21,7 @@ import org.slf4j.LoggerFactory;
 public abstract class WeixinServletSupport extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
+	@SuppressWarnings("unused")
 	private static final Logger LOG = LoggerFactory.getLogger(WeixinServletSupport.class);
 	private final WeixinSupport support = getWeixinSupport();
 

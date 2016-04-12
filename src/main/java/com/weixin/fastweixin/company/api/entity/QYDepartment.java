@@ -12,6 +12,8 @@ import com.weixin.fastweixin.api.entity.BaseModel;
  */
 public class QYDepartment extends BaseModel {
 
+	private static final long serialVersionUID = 1L;
+
 	@JSONField(name = "id")
 	private Integer id;
 	@JSONField(name = "name")

@@ -13,8 +13,10 @@ import java.util.Map;
 public class SendPicsInfoEvent extends BaseEvent {
 	private String eventKey;
 	private Integer count;
+	@SuppressWarnings("rawtypes")
 	private List<Map> picList;
 
+	@SuppressWarnings("rawtypes")
 	public SendPicsInfoEvent(String eventKey, Integer count, List<Map> picList) {
 		super();
 		this.eventKey = eventKey;
@@ -38,10 +40,12 @@ public class SendPicsInfoEvent extends BaseEvent {
 		this.count = count;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public List<Map> getPicList() {
 		return picList;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public void setPicList(List<Map> picList) {
 		this.picList = picList;
 	}

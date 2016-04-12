@@ -25,6 +25,7 @@ import com.weixin.fastweixin.util.JSONUtil;
  */
 public class QYMenuAPI extends QYBaseAPI {
 
+	@SuppressWarnings("unused")
 	private static final Logger LOG = LoggerFactory.getLogger(QYMenuAPI.class);
 
 	/**

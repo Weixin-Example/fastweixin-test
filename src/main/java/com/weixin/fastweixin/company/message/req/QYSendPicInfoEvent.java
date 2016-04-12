@@ -13,8 +13,10 @@ import java.util.Map;
 public class QYSendPicInfoEvent extends QYMenuEvent {
 
 	private int count;
+	@SuppressWarnings("rawtypes")
 	private List<Map> picList;
 
+	@SuppressWarnings("rawtypes")
 	public QYSendPicInfoEvent(String eventKey, int count, List<Map> picList) {
 		super(eventKey);
 		this.count = count;
@@ -29,10 +31,12 @@ public class QYSendPicInfoEvent extends QYMenuEvent {
 		this.count = count;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public List<Map> getPicList() {
 		return picList;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public void setPicList(List<Map> picList) {
 		this.picList = picList;
 	}

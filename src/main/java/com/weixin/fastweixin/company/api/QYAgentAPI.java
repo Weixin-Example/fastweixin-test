@@ -24,6 +24,7 @@ import com.weixin.fastweixin.util.JSONUtil;
  */
 public class QYAgentAPI extends QYBaseAPI {
 
+	@SuppressWarnings("unused")
 	private static final Logger LOG = LoggerFactory.getLogger(QYAgentAPI.class);
 
 	/**

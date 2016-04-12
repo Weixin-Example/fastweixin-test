@@ -62,11 +62,13 @@ public abstract class WeixinSupport {
 	/**
 	 * 微信消息处理器列表
 	 */
+	@SuppressWarnings("rawtypes")
 	private static List<MessageHandle> messageHandles;
 
 	/**
 	 * 微信事件处理器列表
 	 */
+	@SuppressWarnings("rawtypes")
 	private static List<EventHandle> eventHandles;
 
 	/**
@@ -74,6 +76,7 @@ public abstract class WeixinSupport {
 	 *
 	 * @return 微信消息处理器列表
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List<MessageHandle> initMessageHandles() {
 		return null;
 	}
@@ -83,6 +86,7 @@ public abstract class WeixinSupport {
 	 *
 	 * @return 微信事件处理器列表
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List<EventHandle> initEventHandles() {
 		return null;
 	}
@@ -137,6 +141,7 @@ public abstract class WeixinSupport {
 	 * @param request http请求对象
 	 * @return 处理消息的结果，已经是接口要求的xml报文了
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public String processRequest(HttpServletRequest request) {
 		Map<String, Object> reqMap = MessageUtil.parseXml(request, getToken(), getAppId(), getAESKey());
 		fromUserName = (String) reqMap.get("FromUserName");
@@ -345,6 +350,7 @@ public abstract class WeixinSupport {
 		return result;
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private BaseMsg processMessageHandle(BaseReqMsg msg) {
 		if (isEmpty(messageHandles)) {
 			synchronized (LOCK) {
@@ -371,6 +377,7 @@ public abstract class WeixinSupport {
 		return null;
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private BaseMsg processEventHandle(BaseEvent event) {
 		if (isEmpty(eventHandles)) {
 			synchronized (LOCK) {

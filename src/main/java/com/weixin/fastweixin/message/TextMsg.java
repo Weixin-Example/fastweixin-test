@@ -11,6 +11,8 @@ import com.weixin.fastweixin.message.util.MessageBuilder;
  */
 public final class TextMsg extends BaseMsg {
 
+	private static final long serialVersionUID = 1L;
+
 	private StringBuilder contentBuilder;
 
 	public TextMsg() {

@@ -52,6 +52,7 @@ public abstract class QYWeixinSupport {
 
 	protected String fromUserName, toUserName;
 
+	@SuppressWarnings("unused")
 	private WXBizMsgCrypt wxcpt;
 
 	/**
@@ -78,11 +79,13 @@ public abstract class QYWeixinSupport {
 	/**
 	 * 微信消息处理器列表
 	 */
+	@SuppressWarnings("rawtypes")
 	private static List<QYMessageHandle> messageHandles;
 
 	/**
 	 * 微信事件处理器列表
 	 */
+	@SuppressWarnings("rawtypes")
 	private static List<QYEventHandle> eventHandles;
 
 	/**
@@ -90,6 +93,7 @@ public abstract class QYWeixinSupport {
 	 *
 	 * @return 微信消息处理器列表
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List<QYMessageHandle> initMessageHandles() {
 		return null;
 	}
@@ -99,6 +103,7 @@ public abstract class QYWeixinSupport {
 	 *
 	 * @return 微信事件处理器列表
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List<QYEventHandle> initEventHandles() {
 		return null;
 	}
@@ -141,6 +146,7 @@ public abstract class QYWeixinSupport {
 	 * @param request http请求对象
 	 * @return 处理消息的结果，已经是接口要求的XML的报文了
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public String processRequest(HttpServletRequest request) {
 		Map<String, Object> reqMap = MessageUtil.parseXml(request, getToken(), getCropId(), getAESKey());
 		fromUserName = (String) reqMap.get("FromUserName");
@@ -290,7 +296,7 @@ public abstract class QYWeixinSupport {
 				double locationY = Double.parseDouble((String) reqMap.get("Location_Y"));
 				int scale = Integer.parseInt((String) reqMap.get("scale"));
 				String label = (String) reqMap.get("Label");
-				QYLocationReqMsg locationReqMsg = new QYLocationReqMsg(locationX, locationX, scale, label);
+				QYLocationReqMsg locationReqMsg = new QYLocationReqMsg(locationX, locationY, scale, label);
 				buildBasicReqMsg(reqMap, locationReqMsg);
 				msg = handleLocationMsg(locationReqMsg);
 				if (BeanUtil.isNull(msg)) {
@@ -320,6 +326,7 @@ public abstract class QYWeixinSupport {
 	 * @param msg 微信消息
 	 * @return
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private QYBaseRespMsg processMessageHandle(QYBaseReqMsg msg) {
 		if (CollectionUtil.isEmpty(messageHandles)) {
 			synchronized (LOCK) {
@@ -351,6 +358,7 @@ public abstract class QYWeixinSupport {
 	 * @param event
 	 * @return
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private QYBaseRespMsg processEventHandle(QYBaseEvent event) {
 		if (CollectionUtil.isEmpty(eventHandles)) {
 			synchronized (LOCK) {

@@ -68,6 +68,7 @@ public class CollectionUtil {
 	 * @param ele	内容
 	 * @return		集合对象
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static <T> ArrayList<T> newArrayList(T... ele) {
 		ArrayList list = null;
 		if (null != ele && 0 != ele.length) {
