@@ -1,7 +1,7 @@
 package com.weixin.fastweixin.message.req;
 
 /**
- * 
+ * 微信事件基类
  * 
  * @author 	Lian
  * @date	2016年4月11日

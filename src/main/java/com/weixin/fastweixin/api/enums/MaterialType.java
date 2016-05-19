@@ -1,7 +1,7 @@
 package com.weixin.fastweixin.api.enums;
 
 /**
- * 
+ * 素材类型
  * 
  * @author 	Lian
  * @date	2016年4月12日

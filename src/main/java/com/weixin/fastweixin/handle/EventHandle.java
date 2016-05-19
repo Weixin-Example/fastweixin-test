@@ -4,7 +4,7 @@ import com.weixin.fastweixin.message.BaseMsg;
 import com.weixin.fastweixin.message.req.BaseEvent;
 
 /**
- * 
+ * 微信事件处理接口
  * 
  * @author 	Lian
  * @date	2016年4月11日

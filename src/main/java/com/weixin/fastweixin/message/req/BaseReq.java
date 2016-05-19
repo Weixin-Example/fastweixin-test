@@ -8,6 +8,11 @@ package com.weixin.fastweixin.message.req;
  * @since	1.0	
  */
 public class BaseReq {
+	/**
+	 * 变量不使用任何访问修饰符, 通常称为'默认访问模式'.
+	 * 在该模式下, 只允许在同一个包中进行访问
+	 */
+
 	String toUserName;
 	String fromUserName;
 	long createTime;

@@ -52,6 +52,7 @@ import com.weixin.fastweixin.util.StrUtil;
  * @since	1.0	
  */
 public abstract class WeixinSupport {
+
 	private static final Logger LOG = LoggerFactory.getLogger(WeixinSupport.class);
 
 	// 充当锁
@@ -599,6 +600,12 @@ public abstract class WeixinSupport {
 		req.setCreateTime(Long.parseLong((String) reqMap.get("CreateTime")));
 	}
 
+	/**
+	 * 验证服务器地址的有效性
+	 *
+	 * @param request
+	 * @return
+	 */
 	protected boolean isLegal(HttpServletRequest request) {
 		String signature = request.getParameter("signature");
 		String timestamp = request.getParameter("timestamp");
